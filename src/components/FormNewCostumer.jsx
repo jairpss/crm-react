@@ -6,10 +6,19 @@ import Alert from './Alert'
 const FormNewCostumer = () => {
 
   const newCustomerSchema = Yup.object().shape({
-        nombre: Yup.string()
+        name: Yup.string()
                    .min(3, 'The name is too short')
                    .max(40, 'The name is too long')
                    .required('Customer name is required'),
+        company: Yup.string()
+                   .required('Company name is required'),
+        email: Yup.string()
+                   .email('Email addres is not valid')
+                   .required('Email address is required'),
+        phone: Yup.number()
+                   .positive('Phone number is not valid')
+                   .integer('Phone number is not valid')
+                   .typeError('Phone number is not valid'),
   })
 
   const handleSubmit = (values) => {
@@ -55,9 +64,9 @@ const FormNewCostumer = () => {
                         />
 
                         {/* Error message */}
-                        {errors.name && touched.name ? (
-                            <Alert>{errors.nombre}</Alert>
-                        ) : null}
+                        { errors.name && touched.name ? (
+                            <Alert>{errors.name}</Alert>
+                        ) : null }
                     </div>
 
                     <div className="mb-4">
@@ -72,6 +81,11 @@ const FormNewCostumer = () => {
                             placeholder="Customer company"
                             name="company"
                         />
+
+                        {/* Error message */}
+                        { errors.company && touched.company ? (
+                            <Alert>{errors.company}</Alert>
+                        ) : null }
                     </div>
 
                     <div className="mb-4">
@@ -86,6 +100,11 @@ const FormNewCostumer = () => {
                             placeholder="example@example.com"
                             name="email"
                         />
+
+                        {/* Error message */}
+                        { errors.email && touched.email ? (
+                            <Alert>{errors.email}</Alert>
+                        ) : null }
                     </div>
 
                     <div className="mb-4">
@@ -97,9 +116,13 @@ const FormNewCostumer = () => {
                             id="phone"
                             type="tel"
                             className="mt-2 block w-full p-3 bg-slate-50 font-inter rounded-xl"
-                            placeholder="Ex. 111-111-1111"
+                            placeholder="Ex. 123 456 7891"
                             name="phone"
                         />
+                        {/* Error message */}
+                        { errors.phone && touched.phone ? (
+                            <Alert>{errors.phone}</Alert>
+                        ) : null }
                     </div>
 
                     <div className="mb-4">
