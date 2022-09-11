@@ -28,8 +28,8 @@ const Home = () => {
       </h1>
       <p className="mt-3 font-inter">Manage your customers.</p>
 
-      <table className="w-full mt-5 table-auto shadow bg-white">
-          <thead className="bg-slate-600 text-white font-jakarta">
+      <table className="w-full mt-5 table-auto drop-shadow-md bg-white">
+          <thead className="bg-slate-500 text-white font-jakarta">
               <tr>
                   <th className="p-2">Name</th>
                   <th className="p-2">Contact</th>
