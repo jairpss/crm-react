@@ -164,7 +164,7 @@ const FormNewCostumer = () => {
                     <input 
                         type="submit"
                         value="Add Customer"
-                        className="mt-5 w-full bg-gradient-to-r from-blue-600 to-indigo-600  hover:from-blue-500 hover:to-indigo-500 hover:transition-all p-3 text-white font-semibold font-jakarta text-lg rounded-xl cursor-pointer"
+                        className="mt-5 w-full transition ease-in-out bg-blue-600  hover:bg-blue-700 p-3 text-white font-semibold font-jakarta text-lg rounded-xl cursor-pointer"
                     />
 
                 </Form>
