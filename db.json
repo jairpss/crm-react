@@ -1,3 +1,12 @@
 {
-    "customers": []
+  "customers": [
+    {
+      "name": "Jair Partida",
+      "company": "Nowports",
+      "email": "jair@gmail.com",
+      "phone": "+526691388054",
+      "notes": "Logistic company",
+      "id": 1
+    }
+  ]
 }

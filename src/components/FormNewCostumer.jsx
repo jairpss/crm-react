@@ -21,13 +21,29 @@ const FormNewCostumer = () => {
                    .typeError('Phone number is not valid'),
   })
 
-  const handleSubmit = (values) => {
-    console.log(values)
+  const handleSubmit = async (values) => {
+      try {
+          const url = "http://localhost:4000/customers"
+
+          const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+                'Content-Type': 'application/json'
+            }  
+          })
+          console.log(response)
+          const result = await response.json()
+          console.log(result)
+
+      } catch (error) {
+            console.log(error)
+      }
   }  
 
   return (
     <div className="bg-white mt-10 px-10 py-10 shadow-lg md:w-3/4 mx-auto rounded-2xl">
-        <h1 className="text-gray-600 font-bold font-inter text-xl text-center">Add costumer</h1>
+        <h1 className="text-gray-600 font-bold font-jakarta text-xl text-center">Add costumer</h1>
     
         <Formik
             initialValues={
@@ -52,7 +68,7 @@ const FormNewCostumer = () => {
 
                     <div className="mb-4">
                         <label 
-                            className="text-gray-800 font-inter font-semibold"
+                            className="text-gray-700 font-jakarta font-bold"
                             htmlFor="name"
                         >Name:</label>
                         <Field 
@@ -71,7 +87,7 @@ const FormNewCostumer = () => {
 
                     <div className="mb-4">
                         <label 
-                            className="text-gray-800 font-inter font-semibold"
+                            className="text-gray-700 font-jakarta font-bold"
                             htmlFor="company"
                         >Company:</label>
                         <Field 
@@ -90,7 +106,7 @@ const FormNewCostumer = () => {
 
                     <div className="mb-4">
                         <label 
-                            className="text-gray-800 font-inter font-semibold"
+                            className="text-gray-700 font-jakarta font-bold"
                             htmlFor="email"
                         >Email:</label>
                         <Field 
@@ -109,7 +125,7 @@ const FormNewCostumer = () => {
 
                     <div className="mb-4">
                         <label 
-                            className="text-gray-800 font-inter font-semibold"
+                            className="text-gray-700 font-jakarta font-bold"
                             htmlFor="phone"
                         >Phone:</label>
                         <Field 
@@ -127,7 +143,7 @@ const FormNewCostumer = () => {
 
                     <div className="mb-4">
                         <label 
-                            className="text-gray-800 font-inter font-semibold"
+                            className="text-gray-700 font-jakarta font-bold"
                             htmlFor="notes"
                         >Notes:</label>
                         <Field 
@@ -143,7 +159,7 @@ const FormNewCostumer = () => {
                     <input 
                         type="submit"
                         value="Add Customer"
-                        className="mt-5 w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 p-3 text-white font-semibold font-inter text-lg rounded-xl cursor-pointer"
+                        className="mt-5 w-full bg-gradient-to-r from-blue-600 to-indigo-600  hover:from-blue-500 hover:to-indigo-500 hover:transition-all p-3 text-white font-semibold font-jakarta text-lg rounded-xl cursor-pointer"
                     />
 
                 </Form>
