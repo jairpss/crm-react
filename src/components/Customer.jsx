@@ -16,22 +16,23 @@ const Customer = ({customer}) => {
         <td className="p-3">
             <button
                 type="button"
-                className="bg-teal-400 hover:bg-teal-500 block w-full text-white p-2 font-bold font-jakarta text-xs rounded-md"
+                className="bg-teal-400 hover:bg-teal-500 block w-full text-white p-2 font-bold font-jakarta text-xs rounded-full"
                 onClick={() => navigate(`/customers/${id}`)}
             >Info</button>
 
             <button
                 type="button"
-                className="bg-blue-500 hover:bg-blue-600 block w-full text-white p-2 font-bold font-jakarta text-xs rounded-md mt-2"
+                className="bg-blue-500 hover:bg-blue-600 block w-full text-white p-2 font-bold font-jakarta text-xs rounded-full mt-2"
+                onClick={() => navigate(`/customers/edit/${id}`)}
             >Edit</button>
 
             <button
                 type="button"
-                className="bg-rose-400 hover:bg-rose-600 block w-full text-white p-2 font-bold font-jakarta text-xs rounded-lg mt-2"
+                className="bg-pink-400 hover:bg-pink-600 block w-full text-white p-2 font-bold font-jakarta text-xs rounded-full mt-2"
             >Delete</button>
         </td>
     </tr>
   )
 }
-
+ 
 export default Customer

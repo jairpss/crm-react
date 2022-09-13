@@ -1,4 +1,3 @@
-import React from 'react'
 import FormNewCostumer from '../components/FormNewCostumer'
 
 const NewCustomer = () => {
@@ -9,7 +8,7 @@ const NewCustomer = () => {
     
         <FormNewCostumer />
     </>
-  )
+  ) 
 }
 
 export default NewCustomer

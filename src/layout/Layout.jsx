@@ -5,7 +5,7 @@ const Layout = () => {
   const urlActual = location.pathname
 
   return (
-    <div className="md:flex md: min-h-screen">
+    <div className="md:flex md: min-h-screen ">
         <div className="md:w-1/4 bg-gray-800 px-5 py-10 md:rounded-r-3xl">
             <h2 className="text-4xl font-bold text-center text-white font-jakarta">CRM Customers</h2>
             <nav className="mt-10">
@@ -20,7 +20,7 @@ const Layout = () => {
                 >New Customers</Link>
             </nav>
         </div>
-        <div className="md:w-3/4 p-10 md:h-screen overflow-scroll">
+        <div className="md:w-3/4 p-10 md:h-screen overflow-scroll bg-gray-50">
             <Outlet />
         </div>
         

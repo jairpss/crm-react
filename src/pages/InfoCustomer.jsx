@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Spinner from '../components/Spinner'
 
 const InfoCustomer = () => {
+
   const [customer, setCustomer] = useState({})
   const [loading, setLoading] = useState(true)
 
@@ -25,7 +26,6 @@ const InfoCustomer = () => {
     getCustomerAPI()
   }, [])
 
-  console.log(id)
   return (
     loading ? <Spinner /> : 
         Object.keys(customer).length === 0 ? 
