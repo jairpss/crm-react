@@ -28,13 +28,13 @@ const Home = () => {
       </h1>
       <p className="mt-3 font-inter">Manage your customers.</p>
 
-      <table className="w-full mt-5 table-auto drop-shadow-md bg-white">
+      <table className="w-full mt-5 table-auto drop-shadow-md bg-white rounded">
           <thead className="bg-slate-500 text-white font-jakarta">
               <tr>
-                  <th className="p-2">Name</th>
-                  <th className="p-2">Contact</th>
-                  <th className="p-2">Company</th>
-                  <th className="p-2">Actions</th>
+                  <th className="p-3">Name</th>
+                  <th className="p-3">Contact</th>
+                  <th className="p-3">Company</th>
+                  <th className="p-3">Actions</th>
               </tr>
           </thead>
 
