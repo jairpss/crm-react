@@ -27,19 +27,34 @@ const FormNewCostumer = ({customer, loading}) => {
  
   const handleSubmit = async (values) => {
       try {
-          const url = "http://localhost:4000/customers"
+          let response
+          if(customer.id) {
+                //Edit customer
+                const url = `http://localhost:4000/customers/${customer.id}`
+                response = await fetch(url, {
+                    method: 'PUT',
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }  
+                })
 
-          const response = await fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(values),
-            headers: {
-                'Content-Type': 'application/json'
-            }  
-          })
-          console.log(response)
-          const result = await response.json()
-          console.log(result)
-          navigate('/customers')
+          } else {
+                //New customer
+                const url = "http://localhost:4000/customers"
+                response = await fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }  
+                })
+                
+          }
+
+                await response.json()
+                navigate('/customers')
+
       } catch (error) {
             console.log(error)
       }
