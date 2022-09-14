@@ -12,7 +12,7 @@ const EditCustomer = () => {
     
     const getCustomerAPI = async () => {
         try {
-            const url = `http://localhost:4000/customers/${id}`
+            const url = `https://my-json-server.typicode.com/jairpss/crm-react/customers/${id}`
             const response = await fetch(url)
             const result = await response.json()
             setCustomer(result)

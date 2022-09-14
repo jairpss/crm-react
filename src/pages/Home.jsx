@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const getCustomersAPI = async () => {
       try {
-        const url = "http://localhost:4000/customers"
+        const url = "https://my-json-server.typicode.com/jairpss/crm-react/customers"
         const response = await fetch(url)
         const result = await response.json()
 
@@ -26,7 +26,7 @@ const Home = () => {
 
     if(confirmDel) {
       try {
-          const url = `http://localhost:4000/customers/${id}`
+          const url = `https://my-json-server.typicode.com/jairpss/crm-react/customers/${id}`
           const response = await fetch(url, {
             method: 'DELETE'
           })
