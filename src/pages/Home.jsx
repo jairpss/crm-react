@@ -21,6 +21,25 @@ const Home = () => {
     getCustomersAPI()
   }, [])
 
+  const handleDelete = async (id) => {
+    const confirmDel = confirm('Do you want to delete this customer?')
+
+    if(confirmDel) {
+      try {
+          const url = `http://localhost:4000/customers/${id}`
+          const response = await fetch(url, {
+            method: 'DELETE'
+          })
+          await response.json()
+
+          const arrayCustomers = customers.filter(customer => customer.id !== id)
+          setCustomers(arrayCustomers)
+        } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
   return (
     <>
       <h1 className="font-bold font-jakarta text-4xl text-blue-600">
@@ -43,12 +62,11 @@ const Home = () => {
                 <Customer 
                   key={customer.id}
                   customer={customer}
+                  handleDelete={handleDelete}
                 />
               ))}
           </tbody>
       </table>
-
-      
     </>
   )
 }
