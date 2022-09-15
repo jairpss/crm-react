@@ -32,7 +32,7 @@ const InfoCustomer = () => {
         <p className="text-center font-bold font-jakarta text-4xl text-gray-400">Sorry, there is no results 😓</p> 
         : (
     
-                <div>
+                <div className="bg-white drop-shadow-lg rounded-xl p-8">
                     <h1 className="font-bold font-jakarta text-4xl text-blue-600">Customer Information</h1>
                     {customer.name && (
                         <p className="text-xl text-gray-600 font-inter mt-10">
